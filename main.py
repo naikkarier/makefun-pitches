@@ -13,6 +13,7 @@ def main():
     assert "\n" not in text, "pitch must be a single line"
     assert "\r" not in text, "pitch must not contain a carriage return"
     assert text.endswith("."), "pitch must be a single sentence"
+    assert text.replace("make.fun", "makefun").count(".") == 1, "pitch must be exactly one sentence"
     with open(os.path.join(out_dir, "entry.txt"), "w", encoding="utf-8") as f:
         f.write(text)
 
